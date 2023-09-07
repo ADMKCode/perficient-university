@@ -1,0 +1,1 @@
+INSERT INTO courses (name, description, credits, area, price) VALUES ('Onboarding', 'Onboarding', 4, 'DEVELOPMENT', 11000)
