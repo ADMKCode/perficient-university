@@ -21,15 +21,11 @@ public class Student {
   private String firstName;
   private String complementaryName;
   private String lastName;
-  private DiType diType;
+  private String diType;
   @Column(unique = true)
   @Size(min=10, max=10)
   @NotNull
   private String di;
-  /*
-  @ManyToMany(mappedBy = "students")
-  private Set<Course> courses = new HashSet<>();
-  */
 
   @OneToMany(mappedBy = "student")
   private List<Register> registers;

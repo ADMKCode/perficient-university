@@ -28,7 +28,7 @@ public class CourseDTO {
   @Enumerated(value = EnumType.STRING)
   @NotNull
   @JsonProperty
-  private Area area;
+  private String area;
 
   @NotNull
   @JsonProperty

@@ -37,25 +37,10 @@ class CourseSDJpaServiceTest {
 
     when(courseRepository.findAll()).thenReturn(coursesData);
 
-    List<Course> recipes = courseRepository.findAll();
+    List<Course> courses = courseRepository.findAll();
 
-    assertEquals(recipes.size(), 1);
-  }
-
-  @Test
-  void getAllCourses() {
-  }
-
-  @Test
-  void getPaginatedCourses() {
-  }
-
-  @Test
-  void convertToDTO() {
-  }
-
-  @Test
-  void validate() {
+    assertEquals(courses.size(), 1);
+    verify(courseRepository, times(1)).findAll();
   }
 
   @Test
@@ -79,11 +64,6 @@ class CourseSDJpaServiceTest {
       courseSDJpaService.findByID(1L);
     });
   }
-
-  @Test
-  void findByIDDTO() {
-  }
-
   @Test
   void save() {
     Course course = new Course();
@@ -99,7 +79,6 @@ class CourseSDJpaServiceTest {
 
     assertEquals(course.getCourseId(), courseReturned.getCourseId());
   }
-
   @Test
   void deleteByID() {
     Long idToDelete = Long.valueOf(2L);

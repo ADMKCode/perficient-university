@@ -31,7 +31,6 @@ public class IndexController {
 
   @RequestMapping(value = "/courses/", method = RequestMethod.POST)
   public ResponseEntity createCourse(@Valid @RequestBody  CourseDTO courseInput){
-    var auth = SecurityContextHolder.getContext().getAuthentication();
     Course course = courseService.convertToCourse(courseInput);
     courseService.save(course);
     return new ResponseEntity(HttpStatus.CREATED);
@@ -47,5 +46,4 @@ public class IndexController {
   public void deleteCourseById(@PathVariable("courseId") Long id){
     courseService.deleteByID(id);
   }
-  
 }
